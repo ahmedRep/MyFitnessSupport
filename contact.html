@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    background-color: #111;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+h1{
+    text-align: center;
+    color: #009879;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#col2{
+    color: #009879;
+    font-size: 1cm;
+    text-align: left;
+}
+#col1{
+    color: white;
+    font-size: 3.4ch;
+}
+mark{
+    color: #009879;
+}
+
+h1{
+  text-align: center;
+}
+.form-style {
+  margin:10px auto;
+  width: 400px;
+  padding: 20px 12px 10px 20px;
+  color: white;
+  font: 14px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style td {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+.form-style label{
+  margin:0 0 3px 0;
+  padding:0px;
+  display:block;
+  color: white;
+  font-weight: bold;
+}
+.form-style .required{
+  color:red;
+}
+.form-style input[type=submit], .form-style input[type=reset]{
+  background: #4eb5f1;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+.form-style input[type=submit]:hover, .form-style input[type=reset]:hover{
+  background: #4eb5f1;
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+.form-style .field-textarea{
+  height: 100px;
+}
+.form-style input[type=text], 
+.form-style input[type=email],
+textarea{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border:1px solid #BEBEBE;
+  padding: 7px;
+  margin:0px;
+  outline: none;  
+}
+.form-style .long{
+  width: 100%;
+}
+.form-style input[type=text]:focus, 
+.form-style input[type=email]:focus,
+.form-style textarea:focus{
+  -moz-box-shadow: 0 0 8px #88D5E9;
+  -webkit-box-shadow: 0 0 8px #88D5E9;
+  box-shadow: 0 0 8px #88D5E9;
+  border: 1px solid #88D5E9;
+}
+.error{
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+
+</style>
+<script>
+    function getGender() {
+        var ele = document.getElementsByName('gender');
+          
+  
+              if(ele[0].checked)  return "male"
+              else return "female"
+}
+    function validateForm()                                    
+{ 
+
+    var messg = " Un mail de confirmation est envoye \n "
+    var name = document.forms["myForm"]["name"];       
+    var Prenom = document.forms["myForm"]["Prenom"];          
+    var email = document.forms["myForm"]["email"];    
+    var message = document.forms["myForm"]["message"];   
+    var country = document.forms["myForm"]["country"];  
+    var birthday = document.forms["myForm"]["birth-day"];  
+   
+    if (Prenom.value == "")                                  
+    { 
+        document.getElementById('errorPrenom').innerHTML="Veuillez entrez un Prenom valide";  
+       // document.getElementById('errorPrenom').innerHTML=birthday.value;  
+
+        
+        Prenom.focus(); 
+        return false; 
+    }else{
+        document.getElementById('errorPrenom').innerHTML="";  
+    }
+
+    if (name.value == "")                                  
+    { 
+        document.getElementById('errorname').innerHTML="Veuillez entrez un nom valide";  
+        name.focus(); 
+        return false; 
+    }else{
+        
+        document.getElementById('errorname').innerHTML="";  
+    }
+       
+    if (email.value == "")                                   
+    { 
+        document.getElementById('erroremail').innerHTML="Veuillez entrez une adresse mail valide"; 
+        email.focus(); 
+        return false; 
+    }else{
+        document.getElementById('erroremail').innerHTML="";  
+    }
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        document.getElementById('erroremail').innerHTML="Veuillez entrez une adresse mail valide"; 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        document.getElementById('erroremail').innerHTML="Veuillez entrez une adresse mail valide"; 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (message.value == "")                           
+    {
+        document.getElementById('errormsg').innerHTML="Veuillez entrez un message valide"; 
+        message.focus(); 
+        return false; 
+    }else{
+        document.getElementById('errormsg').innerHTML="";  
+    }
+    messg = messg + nom.value + " " +Prenom.value +"\n"
+
+    console.log("kghkgkhkh "+messg)
+    window.confirm(messg)
+    
+    
+    return false; 
+}
+</script>
+</head>
+<body>
+<h1>GYM AND FITNESS</h1>
+<ul>
+  <li><a  href="index.html">Home</a></li>
+  <li><a  href="gym program.html">gym program</a></li>
+  <li><a  href="exercices.html">exercices</a></li>
+  <li><a  href="nutrition.html">Nutrition</a></li>
+  <li><a  class="active"  href="contact.html">Contact</a></li>
+  <li style="float:right"><a href="about.html">About</a></li>
+</ul>
+<br>
+<br>
+
+<!--h1>Formulaire de contact</h1   action="/file.php"   -->
+<form name="myForm"  onsubmit="validateForm()" >
+   <table class="form-style">
+    <tr>
+    <td>
+    <input type="radio"  name="gender" value="male"  checked="checked" > Male
+    &nbsp;&nbsp;
+    <input type="radio"  name="gender" value="female"> Female
+
+</td>
+</tr>
+
+      <tr>
+         <td>
+            <label>
+            Prenom <span class="required">*</span>
+            </label>
+         </td>
+         <td>
+            <input type="text" name="Prenom" placeholder="Entez votre Prenom" class="long"/>
+            <span class="error" id="errorPrenom"></span>
+         </td>
+      </tr>
+      <tr>
+        <td>
+           <label>
+            Nom <span class="required">*</span>
+           </label>
+        </td>
+        <td>
+           <input type="text" name="name" placeholder="Entez votre nom" class="long"/>
+           <span class="error" id="errorname"></span>
+        </td>
+     </tr>
+      <tr>
+        <td>
+            <label >Naissance </label>
+       </td>
+       <td>
+       <input type="date"  name="birth-day"
+       value="2013-01-01"
+       min="1950-01-01" max="2013-12-31">
+        
+        
+      <select   name="country">
+       <option disabled selected value> -- Ville -- </option>
+       <option value="Tunis">Tunis</option>
+       <option value="Sfax">Sfax</option>
+       <option value="Sousse">Sousse</option>
+       <option value="Bizerte">Bizerte</option>
+       <option value="Nabeul">Nabeul</option>
+       <option value="Monastir">Monastir</option>
+       <option value="Beja">Beja</option>
+       <option value="Gafsa">Gafsa</option>
+       <option value="Jandouba">Jandouba</option>
+       <option value="Tataouine">Tataouine</option>
+       <option value="Kef">Kef</option>
+       <option value="Autre">Autre</option>
+      </select>
+    </td>
+</tr>
+      <tr>
+         <td>
+            <label>
+            E-mail <span class="required">*</span>
+            </label>
+         </td>
+         <td>
+            <input type="email" name="email" placeholder="Entez votre mail" class="long"/>
+            <span class="error" id="erroremail"></span>
+         </td>
+      </tr>
+      <tr>
+        <td>
+           <label>
+            Telephone 
+           </label>
+        </td>
+        <td>
+           <input type="text" name="phone" placeholder="Entez votre Num Telephone " class="long"/>
+           <span class="error" id="errorphone"></span>
+        </td>
+     </tr>
+      <tr>
+        <td>
+           <label>
+            Taille  
+           </label>
+        </td>
+        <td>
+           <input type="text" name="longeur" placeholder="Entrez Votre Taille" class="long"/>
+           <span class="error" id="errortaille"></span>
+        </td>
+     </tr>
+     <tr>
+        <td>
+           <label>
+              Entrey Votre Poids 
+           </label>
+        </td>
+        <td>
+           <input type="text" name="poid" placeholder="Entrez Votre Poids"   class="long"/>
+           <span class="error" id="errorpoidd"></span>
+        </td>
+     </tr>
+      <!--tr>
+        <td>
+      <input type="password" placeholder="Enter password" id="password" />
+      <input type="password" placeholder="Enter password (check)" id="passwordCheck" />
+    </td>
+</tr  -->
+      <tr>
+         <td>
+            <label>
+               Message <span class="required">*</span>
+           
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            <input type="checkbox" id="newsletter" />recevoir newsletter </label>
+         </td>
+         <td>
+            <textarea name="message" class="long field-textarea"></textarea>
+            <span class="error" id="errormsg"></span>
+         </td>
+      </tr>
+      <tr>
+         <td></td>
+         <td>
+            <input type="submit" value="Envoyer">      
+            <input type="reset" value="Réinitialiser"> 
+         </td>
+      </tr>
+   </table>
+   
+</form>
+
+
+
+</body>
+</html>
